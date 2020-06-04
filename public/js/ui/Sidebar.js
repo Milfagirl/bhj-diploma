@@ -18,6 +18,14 @@ class Sidebar {
    * при нажатии на кнопку .sidebar-toggle
    * */
   static initToggleButton() {
+    const sidebarClick = document.querySelector('.sidebar-toggle')
+    const bodyForSideBar = document.querySelector('.sidebar-mini')
+    sidebarClick.addEventListener('click', (event) => {
+      event.preventDefault()
+      bodyForSideBar.classList.toggle('sidebar-open')
+      bodyForSideBar.classList.toggle('sidebar-collapse')
+
+    })
 
   }
 
@@ -28,7 +36,39 @@ class Sidebar {
    * При нажатии на кнопку выхода вызывает User.logout и по успешному
    * выходу устанавливает App.setState( 'init' )
    * */
+  // При нажатии на кнопку «Регистрация» необходимо
+  // открыть окно #modal-register
+  // (предварительно найдя его через App.getModal)
+  // с помощью метода Modal.open()
+  // При нажатии на кнопку «Войти»
+  // необходимо открыть окно #modal-login 
+  // (предварительно найдя его через App.getModal) 
+  // с помощью метода Modal.open()
+  // При нажатии на кнопку «Выйти» 
+  // необходимо вызвать метод User.logout
+  // и после успешного выхода 
+  // (response.success = true),
+  // нужно вызвать App.setState( 'init' )
   static initAuthLinks() {
+    let newRegistr = App.getModal('register') //нашли окно #modal-register
+    let newLogin = App.getModal('login') //нашли окно #modal-login 
+    console.log(newLogin)
+    document.querySelector('.menu-item_login') .addEventListener('click', (event) => {
+      event.preventDefault()
+      newLogin.open()
+    })
+    document.querySelector('.menu-item_register') .addEventListener('click', (event) => {
+      event.preventDefault()
+      newRegistr.open()
+     
+    })
+    document.querySelector('.menu-item_logout') .addEventListener('click', (event) => {
+      event.preventDefault()
+      User.logout()
+
+    })
+
+
 
   }
 
