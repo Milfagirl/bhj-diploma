@@ -12,7 +12,8 @@ class Modal {
    * Если переданный элемент не существует,
    * необходимо выкинуть ошибку.
    * */
-  constructor(element) {
+
+    constructor(element) {
     try {
       this.element = element
       // this.registerEvents()
@@ -21,7 +22,7 @@ class Modal {
       return e
     }
   }
-
+  
   /**
    * При нажатии на элемент с data-dismiss="modal"
    * должен закрыть текущее окно
@@ -34,13 +35,13 @@ class Modal {
   // метод onClose().
   registerEvents() {
     
-    const disMiss = document.querySelectorAll("button")
-    console.log(disMiss)
-    disMiss.forEach(elem, function () {
-      elem.addEventListener('click', function () {
-        Modal.onClose()
-      })
-    })
+    // const disMiss = document.querySelectorAll("button")
+    // console.log(disMiss)
+    // disMiss.forEach(elem, function () {
+    //   elem.addEventListener('click', function () {
+    //     Modal.onClose()
+    //   })
+    // })
   }
 
   /**
