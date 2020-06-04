@@ -1,3 +1,5 @@
+// const x = require("uniqid");
+
 /**
  * Класс Modal отвечает за
  * управление всплывающими окнами.
@@ -13,16 +15,15 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
 
-    constructor(element) {
-    try {
-      this.element = element
-      // this.registerEvents()
+  constructor(element) {
+    if (!element) {
+      throw new Error('Element is empty');
     }
-    catch (e) {
-      return e
-    }
+    this.element = element;
+    this.registerEvents();
   }
-  
+
+
   /**
    * При нажатии на элемент с data-dismiss="modal"
    * должен закрыть текущее окно
@@ -33,15 +34,14 @@ class Modal {
   // со значением modal. Устанавливает обработчик
   // событий для этих элементов, которые вызывают
   // метод onClose().
+
   registerEvents() {
-    
-    // const disMiss = document.querySelectorAll("button")
-    // console.log(disMiss)
-    // disMiss.forEach(elem, function () {
-    //   elem.addEventListener('click', function () {
-    //     Modal.onClose()
-    //   })
-    // })
+    this.element.addEventListener('click', (event) => {
+      let buttonDismiss = event.target.closest('button')
+      if (buttonDismiss.getAttribute('data-dismiss') == 'modal') {
+        this.onClose()
+      }
+    })
   }
 
   /**
@@ -49,15 +49,18 @@ class Modal {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose() {
-    Modal.element.close()
+    this.close()
   }
 
   /**
    * Удаляет обработчики событий
    * */
   unregisterEvents() {
-    this.element.forEach(elem => {
-      elem.removeEventListener('click', Modal.onClose())
+    this.element.removeEventListener('click', (event) => {
+      let buttonDismiss = event.target.closest('button')
+      if (buttonDismiss.getAttribute('data-dismiss') == 'modal') {
+        this.onClose()
+      }
     })
   }
   /**
