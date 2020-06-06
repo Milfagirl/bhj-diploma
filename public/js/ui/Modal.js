@@ -37,8 +37,7 @@ class Modal {
 
   registerEvents() {
     this.element.addEventListener('click', (event) => {
-      let buttonDismiss = event.target.closest('button')
-      if (buttonDismiss.getAttribute('data-dismiss') == 'modal') {
+      if (event.target.closest('button[data-dismiss = modal]')) {  //кнопка с атрибут data-dismiss = modal
         this.onClose()
       }
     })

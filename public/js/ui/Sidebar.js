@@ -52,7 +52,7 @@ class Sidebar {
   static initAuthLinks() {
     let newRegistr = App.getModal('register') //нашли окно #modal-register
     let newLogin = App.getModal('login') //нашли окно #modal-login 
-    console.log(newLogin)
+    
     document.querySelector('.menu-item_login') .addEventListener('click', (event) => {
       event.preventDefault()
       newLogin.open()
@@ -65,6 +65,9 @@ class Sidebar {
     document.querySelector('.menu-item_logout') .addEventListener('click', (event) => {
       event.preventDefault()
       User.logout()
+      if (response.success == true) {
+        App.setState( 'init' )
+      }
 
     })
 

@@ -49,18 +49,18 @@ const createRequest = (options = {}) => {
 
 
 //пример для проверки 
-const xhr = createRequest({
-    url: 'user/login',
-    data: {
-        mail: 'ivan@biz.pro',
-        password: 'odinodin'
-    },
-    method: 'POST',
-    callback: (err, response) => {
-        console.log('Ошибка, если есть: ', err);
-        console.log('Данные, если нет ошибки: ', response);
-    }
-});
+// const xhr = createRequest({
+//     url: 'user/login',
+//     data: {
+//         mail: 'ivan@biz.pro',
+//         password: 'odinodin'
+//     },
+//     method: 'POST',
+//     callback: (err, response) => {
+//         console.log('Ошибка, если есть: ', err);
+//         console.log('Данные, если нет ошибки: ', response);
+//     }
+// });
 
 // const xhr = createRequest({
 //     url: 'user/register',

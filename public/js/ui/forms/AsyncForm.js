@@ -13,11 +13,10 @@ class AsyncForm {
    * через registerEvents()
    * */
   constructor(element) {
-    try {
-      this.element = element
-    } catch (e) {
-      return e
+    if (!element) {
+      throw new Error('Element is empty');
     }
+    this.element = element;
   }
 
   /**
@@ -47,7 +46,7 @@ class AsyncForm {
       let value = item[1]
       objectData.append(key, value)
     }
-    console.log(objectData)
+    console.log('AsyncForm get Data() Преобразует данные формы в объект' + objectData)
     return objectData
   }
 
