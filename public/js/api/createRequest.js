@@ -21,7 +21,7 @@ const createRequest = (options = {}) => {
         //метод POST
         formData = new FormData;
         for (let key in options.data) {
-            formData.append(`${key}`, `${options.data[key]}`)
+            formData.append(key, options.data[key])
         }
     }
     let xhr = new XMLHttpRequest()
