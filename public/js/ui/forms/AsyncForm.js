@@ -38,16 +38,18 @@ class AsyncForm {
    * }
    * */
   getData() {
-    let formData = new FormData(this.element)
-    let entries = formData.entries()
-    let objectData = {}
-    for (let item of entries) {
-      let key = item[0]
-      let value = item[1]
-      objectData.append(key, value)
+    const registerform = document.getElementById('register-form')
+    
+    // let formData = new FormData(document.querySelector(this.element))
+    // for (let key in formData.entries())
+    // formData.append('key','value')
+    // console.log('AsyncForm get Data() Преобразует данные формы в объект' + formData)
+    // return formData
+    return {
+      name : registerform.name.value,
+      email : registerform.email.value,
+      password : registerform.password.value
     }
-    console.log('AsyncForm get Data() Преобразует данные формы в объект' + objectData)
-    return objectData
   }
 
   onSubmit(options) {

@@ -10,7 +10,11 @@ class User {
    * локальном хранилище.
    * */
   static setCurrent(user) {
-    localStorage.setItem('user', JSON.stringify(user));
+    console.log(user)
+    localStorage.setItem('user.id', JSON.stringify(user.id));
+    localStorage.setItem('user.name', JSON.stringify(user.name));
+    localStorage.setItem('user.email', JSON.stringify(user.email));
+    
   }
 
   /**
@@ -28,6 +32,7 @@ class User {
   static current() {
      
       return localStorage.user
+     
   }
 
   /**
@@ -35,9 +40,12 @@ class User {
    * авторизованном пользователе.
    * */
   static fetch(data, callback = f => f) {
+   console.log(data)
    
-    let modifiedData = Object.assign({ method: 'GET', url: User.URL + '/current', callback: newCallback }, data)
-   
+   let user = {}
+   user.data = data
+    let modifiedData = Object.assign({ method: 'POST', url: User.URL + '/register', callback: newCallback }, user)
+   console.log(modifiedData)
 
     function newCallback(err, response) {
       if (response.success) User.setCurrent(response.user)
@@ -95,8 +103,9 @@ class User {
     function callregister(err, response) {
       if (response.success) {
         User.unsetCurrent()
-        callback(err, response)
+        
       }
+      callback(err, response)
     }
     createRequest(modifiedData)
    

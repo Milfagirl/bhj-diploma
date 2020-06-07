@@ -27,8 +27,8 @@ class UserWidget {
    * */
   update() {
      if (User.current()) {
-       console.log(localStorage.user)
-       document.querySelector('.user-name').innerHTML = localStorage.user
+       console.log(localStorage.user.name)
+       document.querySelector('.user-name').innerHTML = localStorage.user.name
      }
 
   }

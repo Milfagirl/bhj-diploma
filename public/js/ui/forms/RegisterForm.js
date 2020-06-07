@@ -1,3 +1,5 @@
+
+
 /**
  * Класс RegisterForm управляет формой
  * регистрации
@@ -13,11 +15,15 @@ class RegisterForm  extends AsyncForm{
   
     
   onSubmit( options ) {
-    console.log(options)
-    if(User.register(options)) {
-      App.setState( 'user-logged' )
-      Modal.onClose()
-    }
+    options.method = 'POST'
+      User.register(options,callback = () => {
+      if (response.success) {
+        App.setState( 'user-logged' )
+      }
+    })
+      
+    
+    
     
   }
 }

@@ -52,27 +52,23 @@ class Sidebar {
   static initAuthLinks() {
     let newRegistr = App.getModal('register') //нашли окно #modal-register
     let newLogin = App.getModal('login') //нашли окно #modal-login 
-    
-    document.querySelector('.menu-item_login') .addEventListener('click', (event) => {
+
+    document.querySelector('.menu-item_login').addEventListener('click', (event) => {
       event.preventDefault()
       newLogin.open()
     })
-    document.querySelector('.menu-item_register') .addEventListener('click', (event) => {
+    document.querySelector('.menu-item_register').addEventListener('click', (event) => {
       event.preventDefault()
       newRegistr.open()
-     
+
     })
-    document.querySelector('.menu-item_logout') .addEventListener('click', (event) => {
+    document.querySelector('.menu-item_logout').addEventListener('click', (event) => {
       event.preventDefault()
-      User.logout()
-      if (response.success == true) {
-        App.setState( 'init' )
-      }
-
+      App.setState('init')
     })
-
-
-
   }
-
+    
 }
+
+
+
