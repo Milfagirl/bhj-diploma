@@ -12,8 +12,11 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static list(data, callback = f => f) {
-    let modifiedData = Object.assign({ method: 'GET' }, data);
+    let modifiedData
+    modifiedData.method ='GET'
+    modifiedData.data = data
     modifiedData.callback = callback
+    modifiedData.responseType = 'json'
     createRequest(modifiedData)
   }
 
@@ -24,8 +27,11 @@ class Entity {
    * */
   static create(data, callback = f => f) {
     //добавляем в data.data __method PUT
-    let modifiedData = Object.assign({method: 'POST'}, data);
+    let modifiedData
+    modifiedData.method ='POST'
+    modifiedData.data = data
     modifiedData.data._method = 'PUT'
+    modifiedData.responseType = 'json'
     modifiedData.callback = callback
     createRequest(modifiedData)
   }
@@ -35,8 +41,11 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static get(id = '', data, callback = f => f) {
-    let modifiedData = Object.assign({method: 'GET' }, data);
+    let modifiedData
+    modifiedData.method ='GET'
+    modifiedData.data = data
     modifiedData.data.id = id
+    modifiedData.responseType = 'json'
     modifiedData.callback = callback
     createRequest(modifiedData)
   }
@@ -46,9 +55,11 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static remove(id = '', data, callback = f => f) {
-    let modifiedData = Object.assign({method :'POST'}, data);
+    let modifiedData
+    modifiedData.method ='POST'
+    modifiedData.data = data
     modifiedData.data.id = id
-    modifiedData.data._method = 'DELETE'
+    modifiedData.responseType = 'json'
     modifiedData.callback = callback
     createRequest(modifiedData)
   }

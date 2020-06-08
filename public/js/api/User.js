@@ -11,7 +11,7 @@ class User {
    * */
   static setCurrent(user) {
     localStorage.user = JSON.stringify(user);
-    
+
   }
 
   /**
@@ -19,7 +19,7 @@ class User {
    * пользователе из локального хранилища.
    * */
   static unsetCurrent() {
-    localStorage.clear()
+    delete localStorage.user
   }
 
   /**
@@ -27,9 +27,11 @@ class User {
    * из локального хранилища
    * */
   static current() {
-     
-      return localStorage.user
-     
+    if (localStorage.user) {
+      return JSON.parse(localStorage.user)
+    } else
+      return undefined
+
   }
 
   /**
@@ -37,19 +39,23 @@ class User {
    * авторизованном пользователе.
    * */
   static fetch(data, callback = f => f) {
-   console.log(data)
-   
-   let user = {}
-   user.data = data
-    let modifiedData = Object.assign({ method: 'POST', url: User.URL + '/register', callback: newCallback }, user)
-   console.log(modifiedData)
-
+    let modifiedData = {
+      method : 'POST',
+      url : this.URL + '/current',
+      callback : newCallback,
+      data : data,
+      responseType: "json"
+    }
     function newCallback(err, response) {
-      if (response.success) User.setCurrent(response.user)
-      else User.unsetCurrent()
+      console.log(response.user, response.success)
+      if (response.user && response.success) {
+        User.setCurrent(response.user);
+      } else if (!response.success) {
+        User.unsetCurrent();
+      }
       callback(err, response)
     }
-    createRequest(modifiedData)
+    return createRequest(modifiedData)
   }
 
   /**
@@ -59,14 +65,20 @@ class User {
    * User.setCurrent.
    * */
   static login(data, callback = f => f) {
-    let modifiedData = Object.assign({ method: 'POST', url: User.URL + '/register', callback: newCallback }, data)
+    let modifiedData
+    modifiedData.data = data
+    modifiedData.url = User.URL + '/login'
+    modifiedData.method = 'POST'
+    modifiedData.callback = newCallback
+    modifiedData.responseType  = 'json'
+    console.log(modifiedData)
     function newCallback(err, response) {
       if (response.success) {
         User.setCurrent(response.user)
       }
       callback(err, response)
     }
-    createRequest(modifiedData)
+    return createRequest(modifiedData)
   }
 
   /**
@@ -76,9 +88,14 @@ class User {
    * User.setCurrent.
    * */
   static register(data, callback = f => f) {
-    
-    let modifiedData = Object.assign({ method: 'POST', url: User.URL + '/register', callback: newCallback }, data)
-    console.log(modifiedData)
+    let modifiedData
+    modifiedData.data = data
+    modifiedData.url = User.URL + '/register'
+    modifiedData.method = 'POST'
+    modifiedData.callback = newCallback
+    modifiedData.responseType  = 'json'
+
+
     function newCallback(err, response) {
       if (response.success) {
 
@@ -86,7 +103,7 @@ class User {
       }
       callback(err, response)
     }
-    createRequest(modifiedData)
+    return createRequest(modifiedData)
   }
 
 
@@ -96,16 +113,20 @@ class User {
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
   static logout(data, callback = f => f) {
-    let modifiedData = Object.assign({ method: 'POST', url: User.URL + '/logout', callback: callregister }, data)
-    function callregister(err, response) {
+    let modifiedData
+    modifiedData.data = data
+    modifiedData.url = User.URL + '/logout'
+    modifiedData.method = 'POST'
+    modifiedData.callback = newCallback
+    modifiedData.responseType  = 'json'
+
+      function newCallback(err, response) {
       if (response.success) {
         User.unsetCurrent()
-        
       }
       callback(err, response)
     }
-    createRequest(modifiedData)
-   
+    return createRequest(modifiedData)
   }
 }
 

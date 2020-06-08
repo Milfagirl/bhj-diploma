@@ -4,7 +4,10 @@
  * Основная функция для совершения запросов
  * на сервер.
  * */
-const createRequest = (options = {}) => {
+const createRequest = options  => {
+    console.log(typeof(options))
+    console.log(options)
+    console.log(options.data)
     let string = options.url
     let formData
     //метод GET
@@ -13,21 +16,25 @@ const createRequest = (options = {}) => {
         if (options.hasOwnProperty('data')) {
             string += '?'
             for (let key in options.data) {
-                string += `&${key}=${options.data[key]}`
+                string += `${key}=${options.data[key]}&`
             }
             formData = null
+            string = string.slice(0,string.length-1)
+            console.log('метод get ' , string)
         }
     } else {
         //метод POST
-        formData = new FormData;
+        formData = new FormData();
         for (let key in options.data) {
-            formData.append(key, options.data[key])
+            formData.append(key,options.data[key])
         }
+        console.log(formData.getAll('*'))
+        console.log('formData  ', formData)
     }
     let xhr = new XMLHttpRequest()
     xhr.open(options.method, string)
     xhr.withCredentials = true
-    xhr.responseType = 'json'
+    // xhr.responseType = 'json'
     //обработчик для callback
     try {
         xhr.addEventListener('readystatechange', function () {
@@ -35,13 +42,13 @@ const createRequest = (options = {}) => {
                 // console.log(JSON.parse(xhr.response).success)
                 // console.log(JSON.parse(xhr.response).error)
                 options.callback(null, xhr.response)
-                return xhr.response
+                // return xhr.response
             }
         })
         xhr.send(formData)
     } catch (e) {
         // перехват сетевой ошибки
-        callback(e);
+        options.callback(e);
     }
 }
 
