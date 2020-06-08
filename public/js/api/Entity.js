@@ -4,15 +4,15 @@
  * */
 class Entity {
   static URL = ''
-  constructor() {
-  }
+  
   /**
    * Запрашивает с сервера список данных.
    * Это могут быть счета или доходы/расходы
    * (в зависимости от того, что наследуется от Entity)
    * */
   static list(data, callback = f => f) {
-    let modifiedData
+    let modifiedData ={}
+    modifiedData.url = this.URL
     modifiedData.method ='GET'
     modifiedData.data = data
     modifiedData.callback = callback
@@ -27,8 +27,9 @@ class Entity {
    * */
   static create(data, callback = f => f) {
     //добавляем в data.data __method PUT
-    let modifiedData
+    let modifiedData ={}
     modifiedData.method ='POST'
+    modifiedData.url = this.URL
     modifiedData.data = data
     modifiedData.data._method = 'PUT'
     modifiedData.responseType = 'json'
@@ -41,8 +42,10 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static get(id = '', data, callback = f => f) {
-    let modifiedData
+    let modifiedData ={}
     modifiedData.method ='GET'
+    modifiedData.url = this.URL
+    
     modifiedData.data = data
     modifiedData.data.id = id
     modifiedData.responseType = 'json'
@@ -55,8 +58,10 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static remove(id = '', data, callback = f => f) {
-    let modifiedData
+    let modifiedData = {}
     modifiedData.method ='POST'
+    modifiedData.url = this.URL
+    
     modifiedData.data = data
     modifiedData.data.id = id
     modifiedData.responseType = 'json'

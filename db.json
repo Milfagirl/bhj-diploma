@@ -30,6 +30,31 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Наличные",
+      "user_id": "1",
+      "id": "pvn1pckkkb6sjy9b"
+    },
+    {
+      "name": "Тинькофф",
+      "user_id": "1",
+      "id": "pvn1p8pskb6unm4l"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "1",
+      "id": "pvn1pag8kb6xcgs7"
+    },
+    {
+      "name": "ВТБ",
+      "user_id": "1",
+      "id": "pvn1p4oskb6xhiw9"
+    },
+    {
+      "name": "Уралсиб",
+      "user_id": "1",
+      "id": "pvn1pb1skb6xj5w0"
     }
   ],
   "transactions": [
