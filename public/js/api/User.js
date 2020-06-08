@@ -66,7 +66,7 @@ class User {
    * User.setCurrent.
    * */
   static login(data, callback = f => f) {
-    let modifiedData
+    let modifiedData ={}
     modifiedData.data = data
     modifiedData.url = User.URL + '/login'
     modifiedData.method = 'POST'
@@ -89,7 +89,7 @@ class User {
    * User.setCurrent.
    * */
   static register(data, callback = f => f) {
-    let modifiedData
+    let modifiedData ={}
     modifiedData.data = data
     modifiedData.url = User.URL + '/register'
     modifiedData.method = 'POST'
@@ -114,7 +114,7 @@ class User {
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
   static logout(data, callback = f => f) {
-    let modifiedData
+    let modifiedData = {}
     modifiedData.data = data
     modifiedData.url = User.URL + '/logout'
     modifiedData.method = 'POST'

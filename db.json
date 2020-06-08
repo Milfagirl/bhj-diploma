@@ -5,7 +5,14 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1",
-      "isAuthorized": false
+      "isAuthorized": true
+    },
+    {
+      "name": "Svetlana",
+      "email": "ganyim@inbox.ru",
+      "password": "123",
+      "id": "pvn1paockb6m85a9",
+      "isAuthorized": true
     }
   ],
   "accounts": [

@@ -17,6 +17,7 @@ class AsyncForm {
       throw new Error('Element is empty');
     }
     this.element = element;
+    this.registerEvents();
   }
 
   /**
@@ -26,7 +27,7 @@ class AsyncForm {
   registerEvents() {
     this.element.addEventListener('submit', (event) => {
       event.preventDefault()
-      AsyncForm.submit()
+      this.submit()
     })
   }
 
@@ -58,6 +59,10 @@ class AsyncForm {
    * данные, полученные из метода getData()
    * */
   submit() {
-    AsyncForm.onSubmit(AsyncForm.getData())
+
+    let options = {};
+    options.data = this.getData();
+    this.onSubmit(options);
   }
+
 }
