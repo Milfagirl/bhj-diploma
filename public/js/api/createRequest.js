@@ -41,7 +41,7 @@ const createRequest = options  => {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 // console.log(JSON.parse(xhr.response).success)
                 // console.log(JSON.parse(xhr.response).error)
-                options.callback(null, xhr.response)
+                options.callback(null, JSON.parse(xhr.response))
                 // return xhr.response
             }
         })

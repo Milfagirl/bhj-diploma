@@ -40,13 +40,14 @@ class User {
    * */
   static fetch(data, callback = f => f) {
     let modifiedData = {
-      method : 'POST',
+      method : 'GET',
       url : this.URL + '/current',
       callback : newCallback,
       data : data,
       responseType: "json"
     }
     function newCallback(err, response) {
+      
       console.log(response.user, response.success)
       if (response.user && response.success) {
         User.setCurrent(response.user);
