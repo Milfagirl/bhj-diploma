@@ -48,7 +48,7 @@ class User {
     }
     function newCallback(err, response) {
       
-      console.log(response.user, response.success)
+      
       if (response.user && response.success) {
         User.setCurrent(response.user);
       } else if (!response.success) {

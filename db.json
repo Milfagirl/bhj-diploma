@@ -192,6 +192,566 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "pvn1pd9kkb7ji7g8",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:25:13.015Z"
+    },
+    {
+      "id": "pvn1pd9kkb7ji7jp",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:25:13.141Z"
+    },
+    {
+      "id": "pvn1p9s4kb7jnpxp",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:29:30.252Z"
+    },
+    {
+      "id": "pvn1p9s4kb7jnpyo",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:29:30.288Z"
+    },
+    {
+      "id": "pvn1petckb7jo1u4",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:29:45.675Z"
+    },
+    {
+      "id": "pvn1petckb7jo1w7",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:29:45.751Z"
+    },
+    {
+      "id": "pvn1pe20kb7jo93z",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:29:55.102Z"
+    },
+    {
+      "id": "pvn1pe20kb7jo967",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:29:55.183Z"
+    },
+    {
+      "id": "pvn1p900kb7joynx",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "pvn1pckkkb6sjy9b",
+      "created_at": "2020-06-09T06:30:28.220Z"
+    },
+    {
+      "id": "pvn1p900kb7joyr7",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "pvn1pckkkb6sjy9b",
+      "created_at": "2020-06-09T06:30:28.339Z"
+    },
+    {
+      "id": "pvn1p88kb7jxrf4",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:37:18.735Z"
+    },
+    {
+      "id": "pvn1p7xgkb7jynwr",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:38:00.842Z"
+    },
+    {
+      "id": "pvn1pdgckb7k44pn",
+      "type": "EXPENSE",
+      "name": "Ноутбук",
+      "sum": 50000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:42:15.898Z"
+    },
+    {
+      "id": "pvn1pdgckb7k44s6",
+      "type": "EXPENSE",
+      "name": "Ноутбук",
+      "sum": 50000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:42:15.990Z"
+    },
+    {
+      "id": "pvn1pdo4kb7k591x",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 30300,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:43:08.181Z"
+    },
+    {
+      "id": "pvn1pdo4kb7k5951",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 30300,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:43:08.294Z"
+    },
+    {
+      "id": "pvn1p5xskb7khacp",
+      "type": "EXPENSE",
+      "name": "Платье",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:52:29.736Z"
+    },
+    {
+      "id": "pvn1p5xskb7khaf6",
+      "type": "EXPENSE",
+      "name": "Платье",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:52:29.826Z"
+    },
+    {
+      "id": "pvn1p5v4kb7kiu1x",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:53:41.924Z"
+    },
+    {
+      "id": "pvn1p5v4kb7kiu40",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T06:53:42.000Z"
+    },
+    {
+      "id": "pvn1p5tkkb7kwq7t",
+      "type": "EXPENSE",
+      "name": "Наличные",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:04:30.136Z"
+    },
+    {
+      "id": "pvn1p5tkkb7kwqa1",
+      "type": "EXPENSE",
+      "name": "Наличные",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:04:30.217Z"
+    },
+    {
+      "id": "pvn1pd2wkb7l0jm2",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:07:28.201Z"
+    },
+    {
+      "id": "pvn1pd2wkb7l0jo5",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:07:28.277Z"
+    },
+    {
+      "id": "pvn1pcqckb7l9pod",
+      "type": "EXPENSE",
+      "name": "Наличные",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:14:35.964Z"
+    },
+    {
+      "id": "pvn1pcqckb7l9pqc",
+      "type": "EXPENSE",
+      "name": "Наличные",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:14:36.036Z"
+    },
+    {
+      "id": "pvn1pb0gkb7lbayg",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:15:50.199Z"
+    },
+    {
+      "id": "pvn1pb0gkb7lbb00",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:15:50.256Z"
+    },
+    {
+      "id": "pvn1p80kkb7ld844",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:17:19.827Z"
+    },
+    {
+      "id": "pvn1p80kkb7ld86o",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:17:19.920Z"
+    },
+    {
+      "id": "pvn1pdwskb7ltkx4",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:30:02.919Z"
+    },
+    {
+      "id": "pvn1pdwskb7ltkyb",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:30:02.963Z"
+    },
+    {
+      "id": "pvn1p8fgkb7m0rrd",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:35:38.376Z"
+    },
+    {
+      "id": "pvn1p8fgkb7m0rtf",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:35:38.451Z"
+    },
+    {
+      "id": "pvn1pe5skb7m4tqr",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:38:47.570Z"
+    },
+    {
+      "id": "pvn1pe5skb7m4tru",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:38:47.610Z"
+    },
+    {
+      "id": "pvn1p6dgkb7m6ekd",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:40:01.212Z"
+    },
+    {
+      "id": "pvn1p6dgkb7m6emr",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:40:01.299Z"
+    },
+    {
+      "id": "pvn1peckkb7m9s8z",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:42:38.914Z"
+    },
+    {
+      "id": "pvn1peckkb7m9sal",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:42:38.973Z"
+    },
+    {
+      "id": "pvn1ptokb7mar08",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:43:23.959Z"
+    },
+    {
+      "id": "pvn1ptokb7mar1g",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:43:24.004Z"
+    },
+    {
+      "id": "pvn1p9pokb7mnrks",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:53:31.227Z"
+    },
+    {
+      "id": "pvn1p9pokb7mnrn4",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:53:31.312Z"
+    },
+    {
+      "id": "pvn1p6tkkb7mtnkj",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:58:05.971Z"
+    },
+    {
+      "id": "pvn1p9wskb7muaf4",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T07:58:35.583Z"
+    },
+    {
+      "id": "pvn1p4e4kb7mz1d6",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T08:02:17.130Z"
+    },
+    {
+      "id": "pvn1p4e4kb7mz1e6",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T08:02:17.166Z"
+    },
+    {
+      "id": "pvn1pdg4kb7n33te",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T08:05:26.929Z"
+    },
+    {
+      "id": "pvn1paqskb7n4hlf",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-09T08:06:31.442Z"
+    },
+    {
+      "id": "pvn1pa1kkb7nm7t7",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 2,
+      "account_id": "1",
+      "created_at": "2020-06-09T08:20:18.570Z"
+    },
+    {
+      "id": "pvn1pa1kkb7nm7w0",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 2,
+      "account_id": "1",
+      "created_at": "2020-06-09T08:20:18.672Z"
+    },
+    {
+      "id": "pvn1p7xokb7nnqkx",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 2,
+      "account_id": "1",
+      "created_at": "2020-06-09T08:21:29.552Z"
+    },
+    {
+      "id": "pvn1p7xokb7nnqlm",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 2,
+      "account_id": "1",
+      "created_at": "2020-06-09T08:21:29.578Z"
+    },
+    {
+      "id": "pvn1pe4ckb8xhy87",
+      "type": "EXPENSE",
+      "name": "Наличные",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T05:44:41.862Z"
+    },
+    {
+      "id": "pvn1pfawkb8xj4fx",
+      "type": "EXPENSE",
+      "name": "Наличные",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T05:45:36.572Z"
+    },
+    {
+      "id": "pvn1p9jckb8xuv76",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T05:54:44.465Z"
+    },
+    {
+      "id": "pvn1p9jckb8xuv8c",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T05:54:44.508Z"
+    },
+    {
+      "id": "pvn1p83gkb8y2m7z",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:00:46.078Z"
+    },
+    {
+      "id": "pvn1pahokb8y4ia8",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:02:14.287Z"
+    },
+    {
+      "id": "pvn1p95kkb8ya5kz",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:06:37.762Z"
+    },
+    {
+      "id": "pvn1p95kkb8ya5ly",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:06:37.798Z"
+    },
+    {
+      "id": "pvn1pdgckb8yknnh",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:14:47.740Z"
+    },
+    {
+      "id": "pvn1pdgckb8yknpr",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:14:47.823Z"
+    },
+    {
+      "id": "pvn1p81gkb8ywgbz",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:23:58.126Z"
+    },
+    {
+      "id": "pvn1pf84kb8yyt18",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:25:47.899Z"
+    },
+    {
+      "id": "pvn1pakckb8z8mvu",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:33:26.489Z"
+    },
+    {
+      "id": "pvn1p56skb8zctl7",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:36:41.802Z"
+    },
+    {
+      "id": "pvn1p28gkb8zgs8p",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 500,
+      "account_id": "pvn1p4oskb6xhiw9",
+      "created_at": "2020-06-10T06:39:46.680Z"
+    },
+    {
+      "id": "pvn1peookb8zrp86",
+      "type": "EXPENSE",
+      "name": "ЗП",
+      "sum": 10000,
+      "account_id": "1",
+      "created_at": "2020-06-10T06:48:15.989Z"
     }
   ]
 }

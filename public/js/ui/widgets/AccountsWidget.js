@@ -62,7 +62,7 @@ class AccountsWidget {
     if (user) {
       Account.list(user, (err, response) => {
         if (response && response.success) {
-          console.log(response.data)
+         
           this.clear()
           response.data.forEach(element => {
             this.renderItem(element)

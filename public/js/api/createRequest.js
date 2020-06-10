@@ -5,9 +5,6 @@
  * на сервер.
  * */
 const createRequest = options  => {
-    console.log(typeof(options))
-    console.log(options)
-    console.log(options.data)
     let string = options.url
     let formData
     //метод GET
@@ -20,7 +17,7 @@ const createRequest = options  => {
             }
             formData = null
             string = string.slice(0,string.length-1)
-            console.log('метод get ' , string)
+          
         }
     } else {
         //метод POST
@@ -28,8 +25,7 @@ const createRequest = options  => {
         for (let key in options.data) {
             formData.append(key,options.data[key])
         }
-        console.log(formData.getAll('*'))
-        console.log('formData  ', formData)
+        
     }
     let xhr = new XMLHttpRequest()
     xhr.open(options.method, string)
@@ -44,6 +40,7 @@ const createRequest = options  => {
                 options.callback(null, JSON.parse(xhr.response))
                 // return xhr.response
             }
+            // xhr.send(formData)
         })
         xhr.send(formData)
     } catch (e) {

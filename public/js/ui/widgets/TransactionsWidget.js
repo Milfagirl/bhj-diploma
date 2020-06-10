@@ -11,7 +11,11 @@ class TransactionsWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
-
+    if (!element) {
+      throw new Error(' element is empty')
+    }
+    this.element = element
+    this.registerEvents()
   }
   /**
    * Регистрирует обработчики нажатия на
@@ -20,6 +24,16 @@ class TransactionsWidget {
    * экземпляра окна
    * */
   registerEvents() {
-
+    this.element.addEventListener('click', (event) => {
+      event.preventDefault()
+      if (event.target == document.querySelector('.btn-success')) {
+        App.getModal('newIncome').open()
+      }
+  
+      if (event.target == document.querySelector('.btn-danger')) {
+        App.getModal('newExpense').open()
+      }
+    })
   }
 }
+
