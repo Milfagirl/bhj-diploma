@@ -11,7 +11,6 @@ class User {
    * */
   static setCurrent(user) {
     localStorage.user = JSON.stringify(user);
-
   }
 
   /**
@@ -31,7 +30,6 @@ class User {
       return JSON.parse(localStorage.user)
     } else
       return undefined
-
   }
 
   /**
@@ -40,18 +38,16 @@ class User {
    * */
   static fetch(data, callback = f => f) {
     let modifiedData = {
-      method : 'GET',
-      url : this.URL + '/current',
-      callback : newCallback,
-      data : data,
+      method: 'GET',
+      url: this.URL + '/current',
+      callback: newCallback,
+      data: data,
       responseType: "json"
     }
     function newCallback(err, response) {
-      
-      
       if (response.user && response.success) {
         User.setCurrent(response.user);
-      } else if (!response.success) {
+      } else {
         User.unsetCurrent();
       }
       callback(err, response)
@@ -66,12 +62,12 @@ class User {
    * User.setCurrent.
    * */
   static login(data, callback = f => f) {
-    let modifiedData ={}
+    let modifiedData = {}
     modifiedData.data = data
     modifiedData.url = User.URL + '/login'
     modifiedData.method = 'POST'
     modifiedData.callback = newCallback
-    modifiedData.responseType  = 'json'
+    modifiedData.responseType = 'json'
     console.log(modifiedData)
     function newCallback(err, response) {
       if (response.success) {
@@ -89,26 +85,22 @@ class User {
    * User.setCurrent.
    * */
   static register(data, callback = f => f) {
-    let modifiedData ={}
+    let modifiedData = {}
     modifiedData.data = data
     modifiedData.url = User.URL + '/register'
     modifiedData.method = 'POST'
     modifiedData.callback = newCallback
-    modifiedData.responseType  = 'json'
+    modifiedData.responseType = 'json'
 
 
     function newCallback(err, response) {
       if (response.success) {
-
         User.setCurrent(response.user)
       }
       callback(err, response)
     }
     return createRequest(modifiedData)
   }
-
-
-
   /**
    * Производит выход из приложения. После успешного
    * выхода необходимо вызвать метод User.unsetCurrent
@@ -119,9 +111,9 @@ class User {
     modifiedData.url = User.URL + '/logout'
     modifiedData.method = 'POST'
     modifiedData.callback = newCallback
-    modifiedData.responseType  = 'json'
+    modifiedData.responseType = 'json'
 
-      function newCallback(err, response) {
+    function newCallback(err, response) {
       if (response.success) {
         User.unsetCurrent()
       }

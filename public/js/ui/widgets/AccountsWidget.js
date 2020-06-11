@@ -38,10 +38,8 @@ class AccountsWidget {
       if (event.target == document.querySelector('.create-account')) {
         App.getModal('createAccount').open()
       }
-  
-      if (event.target.tagName.toLowerCase() ==   'a') {
-       
-        this.onSelectAccount(event.target)
+      if (event.target.closest('a')) {
+        this.onSelectAccount(event.target.closest('li'))
       }
     })
   }
@@ -58,15 +56,12 @@ class AccountsWidget {
    * метода renderItem()
    * */
   update() {
-    let user = User.current()
+    let user = localStorage.user
     if (user) {
-      Account.list(user, (err, response) => {
+      Account.list(JSON.parse(user), (err, response) => {
         if (response && response.success) {
-         
           this.clear()
-          response.data.forEach(element => {
-            this.renderItem(element)
-          });
+          this.renderItem(response.data)   //????
         } else {
           console.log(`Ошибка ${err}`);
         }
@@ -95,16 +90,16 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount(element) {
-      
-      document.querySelectorAll('.active').forEach(item => {
-        item.classList.remove('active')
-      }) 
-      let elementLi = element.closest('li')
-      console.log(elementLi)
-      elementLi.classList.add('active')
-      console.log(element)
-      // App.showPage('transactions', { account_id: response.data.id })
-    
+
+    document.querySelectorAll('.active').forEach(item => {
+      item.classList.remove('active')
+    })
+    element.classList.add('active')
+    console.log(element)
+    console.log(element.dataset)
+    console.log(element.dataset.id)
+    App.showPage('transactions', { account_id: element.dataset.id })
+
 
   }
 
@@ -114,11 +109,7 @@ class AccountsWidget {
    * item - объект с данными о счёте
    * */
   getAccountHTML(item) {
-    
-    let number = (this.element.querySelectorAll('.account')).length + 1
-    
-    let html = `<li class="active account" data-id=${number}> <a href="#"> <span>${item.name}</span> / <span>${item.sum} ₽</span> </a> </li>`
-
+    let html = `<li class="active account" data-id=${item.id}> <a href="#"> <span>${item.name}</span> / <span>${item.sum} ₽</span> </a> </li>`
     return html
   }
 
@@ -129,6 +120,10 @@ class AccountsWidget {
    * */
 
   renderItem(item) {
-    this.element.insertAdjacentHTML('beforeend', this.getAccountHTML(item))
+    if (item.length > 0) {
+      item.forEach(element => {
+        this.element.insertAdjacentHTML('beforeend', this.getAccountHTML(element))
+      })
+    }
   }
 }

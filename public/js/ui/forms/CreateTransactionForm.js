@@ -8,41 +8,30 @@ class CreateTransactionForm extends AsyncForm {
    * Вызывает родительский конструктор и
    * метод renderAccountsList
    * */
-  
+
   constructor(element) {
     super(element)
-    // super.registerEvents()
     this.renderAccountsList();
-
-
   }
   /**   * Получает список счетов с помощью Account.list
    * Обновляет в форме всплывающего окна выпадающий список
    * */
   renderAccountsList() {
-   
-    
-      let user = User.current()
-      // let selectForm = document.getElementById('expense-accounts-list')
+    let user = User.current()
+    if (user) {
       let selectForm = this.element.querySelector('select[name=account_id]')
       Account.list(user, (err, response) => {
         if (response && response.success) {
           // let selectForm = this.element.querySelector('select[name=account_id]')
-         
+
           for (let i = 0; i < response.data.length; i++) {
             selectForm.options[i] = new Option(`${response.data[i].name}`, `${response.data[i].id}`);
           }
-         
-
         } else {
           console.log(`Ошибка ${err}`);
         }
       })
-
-      
-   
-
-
+    }
   }
 
   /**
@@ -61,7 +50,6 @@ class CreateTransactionForm extends AsyncForm {
         App.update()
       }
     })
-
   }
 }
 

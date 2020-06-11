@@ -16,7 +16,7 @@ class UserWidget {
     }
     this.element = element;
   }
-  
+
 
   /**
    * Получает информацию о текущем пользователе
@@ -26,11 +26,9 @@ class UserWidget {
    * авторизованного пользователя
    * */
   update() {
-     if (User.current()) {
-       let user = JSON.parse(localStorage.user)
-       
-       document.querySelector('.user-name').innerHTML = user.name
-     }
-
+    if (User.current()) {
+      let user = JSON.parse(localStorage.user)
+      document.querySelector('.user-name').innerHTML = user.name
+    }
   }
 }
