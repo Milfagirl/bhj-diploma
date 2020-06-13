@@ -20,7 +20,7 @@ class CreateTransactionForm extends AsyncForm {
     let user = User.current()
     if (user) {
       let selectForm = this.element.querySelector('select[name=account_id]')
-      Account.list(user, (err, response) => {
+      Account.list('', (err, response) => {
         if (response && response.success) {
           // let selectForm = this.element.querySelector('select[name=account_id]')
 

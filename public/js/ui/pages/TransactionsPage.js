@@ -24,7 +24,8 @@ class TransactionsPage {
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-    this.render(this.lastOptions)
+    console.log(TransactionsPage.lastOptions)
+    this.render(TransactionsPage.lastOptions)
   }
 
   /**
@@ -48,8 +49,9 @@ class TransactionsPage {
           let buttonid = item.dataset.id
           console.log(buttonid)
           this.removeTransaction(buttonid)
-          return
+         
         }
+        // App.update()
       })
     })
   }
@@ -63,14 +65,17 @@ class TransactionsPage {
    * для обновления приложения
    * */
   removeAccount() {
-    if (this.lastOptions) {
+    console.log(TransactionsPage.lastOptions)
+    if (TransactionsPage.lastOptions) {
       if (confirm('Вы действительно хотите удалить счёт?')) {
-        this.clear()
-        Account.remove("id", this.lastOptionsoptions, (err, response) => {
+        
+        Account.remove("id", TransactionsPage.lastOptions.account_id, (err, response) => {
           if (response && response.success) {
+            this.clear()
             App.update()
           }
         })
+        
       }
     }
   }
@@ -88,6 +93,7 @@ class TransactionsPage {
           App.update()
         }
       })
+     
     }
   }
 
@@ -99,20 +105,24 @@ class TransactionsPage {
    * */
   render(options) {
 
-    this.lastOptions = options
+    
     if (options) {
       Account.get("id", options.account_id, (err, response) => {
-        console.log(response.data)
+      if (response.success){
         response.data.forEach(item => {
           if (item.id == options.account_id) {
             this.renderTitle(item.name)
           }
         })
-        Transaction.list(this.lastOptions, (err, response) => {
-          console.log(response.data)
-          this.renderTransactions(response.data)
-        })
+      }
       })
+      Transaction.list(options, (err, response) => {
+        if (response.success) {
+          this.renderTransactions(response.data)
+        }
+      })
+      TransactionsPage.lastOptions = options
+      console.log(TransactionsPage.lastOptions)
     }
   }
 
@@ -124,7 +134,8 @@ class TransactionsPage {
   clear() {
     this.renderTransactions([])
     this.renderTitle('Название счёта')
-    this.lastOptions = ''
+    TransactionsPage.lastOptions = ''
+    console.log(TransactionsPage.lastOptions)
   }
 
   /**
@@ -191,6 +202,11 @@ class TransactionsPage {
    * используя getTransactionHTML
    * */
   renderTransactions(data) {
+    let elem = this.element.querySelector('.content')  
+    while (elem.firstChild) {
+      elem.removeChild(elem.firstChild);  //удаляет транзакции на странице
+    }
+    
     if (data.length > 0) {
       data.forEach(item => {
         this.element.querySelector('.content').insertAdjacentHTML('beforeend', this.getTransactionHTML(item))
