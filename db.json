@@ -5,7 +5,7 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "name": "Svetlana",
@@ -20,6 +20,13 @@
       "password": "123",
       "id": "pvn1p1jokbb3h1o3",
       "isAuthorized": false
+    },
+    {
+      "name": "Vladimir",
+      "email": "vladimir@mail.ru",
+      "password": "123",
+      "id": "pvn1p724kbdnuct6",
+      "isAuthorized": true
     }
   ],
   "accounts": [
@@ -97,6 +104,30 @@
       "sum": 3000,
       "account_id": "pvn1p8aokbdndh32",
       "created_at": "2020-06-13T13:07:40.470Z"
+    },
+    {
+      "id": "pvn1p97ckbdnqa64",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 20000,
+      "account_id": "pvn1p5eckbb3h6e8",
+      "created_at": "2020-06-13T13:10:05.307Z"
+    },
+    {
+      "id": "pvn1p2o8kbdnqprm",
+      "type": "INCOME",
+      "name": "Дивиденды",
+      "sum": 1300,
+      "account_id": "pvn1p4m0kbb3j8io",
+      "created_at": "2020-06-13T13:10:25.521Z"
+    },
+    {
+      "id": "pvn1p9lskbdnqyjq",
+      "type": "EXPENSE",
+      "name": "Продукты",
+      "sum": 3000,
+      "account_id": "pvn1p5eckbb3h6e8",
+      "created_at": "2020-06-13T13:10:36.901Z"
     }
   ]
 }
