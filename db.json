@@ -47,6 +47,11 @@
       "name": "Сбербанк",
       "user_id": "pvn1p1jokbb3h1o3",
       "id": "pvn1p4m0kbb3j8io"
+    },
+    {
+      "name": "Банк",
+      "user_id": "1",
+      "id": "pvn1p8aokbdndh32"
     }
   ],
   "transactions": [
@@ -76,6 +81,22 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "pvn1p5xokbdndyej",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 50000,
+      "account_id": "pvn1p8aokbdndh32",
+      "created_at": "2020-06-13T13:00:30.186Z"
+    },
+    {
+      "id": "pvn1p3l8kbdnn6ev",
+      "type": "EXPENSE",
+      "name": "Продукты",
+      "sum": 3000,
+      "account_id": "pvn1p8aokbdndh32",
+      "created_at": "2020-06-13T13:07:40.470Z"
     }
   ]
 }

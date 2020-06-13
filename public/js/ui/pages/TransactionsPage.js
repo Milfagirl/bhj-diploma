@@ -171,7 +171,7 @@ class TransactionsPage {
    * */
   getTransactionHTML(item) {
 
-    return `<div class="transaction transaction_${item.type} row">
+    return `<div class="transaction transaction_${item.type.toLowerCase()} row">
               <div class="col-md-7 transaction__details">
                   <div class="transaction__icon">
                     <span class="fa fa-money fa-2x"></span>
