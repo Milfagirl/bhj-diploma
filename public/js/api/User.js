@@ -4,7 +4,7 @@
  * Имеет свойство URL, равное '/user'.
  * */
 class User {
-  static URL = '/user'
+  static URL = '/user';
   /**
    * Устанавливает текущего пользователя в
    * локальном хранилище.
@@ -18,7 +18,7 @@ class User {
    * пользователе из локального хранилища.
    * */
   static unsetCurrent() {
-    delete localStorage.user
+    delete localStorage.user;
   }
 
   /**
@@ -26,11 +26,10 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    if (localStorage.user) {
-      return JSON.parse(localStorage.user)
-    } else
-      return undefined
-  }
+    if (localStorage.user){
+      return JSON.parse(localStorage.user);
+    }
+   }
 
   /**
    * Получает информацию о текущем
@@ -50,9 +49,9 @@ class User {
       } else {
         User.unsetCurrent();
       }
-      callback(err, response)
+      callback(err, response);
     }
-    return createRequest(modifiedData)
+    return createRequest(modifiedData);
   }
 
   /**
@@ -62,20 +61,20 @@ class User {
    * User.setCurrent.
    * */
   static login(data, callback = f => f) {
-    let modifiedData = {}
-    modifiedData.data = data
-    modifiedData.url = User.URL + '/login'
-    modifiedData.method = 'POST'
-    modifiedData.callback = newCallback
-    modifiedData.responseType = 'json'
-    console.log(modifiedData)
+    let modifiedData = {};
+    modifiedData.data = data;
+    modifiedData.url = User.URL + '/login';
+    modifiedData.method = 'POST';
+    modifiedData.callback = newCallback;
+    modifiedData.responseType = 'json';
+    
     function newCallback(err, response) {
       if (response.success) {
-        User.setCurrent(response.user)
+        User.setCurrent(response.user);
       }
-      callback(err, response)
+      callback(err, response);
     }
-    return createRequest(modifiedData)
+    return createRequest(modifiedData);
   }
 
   /**
@@ -85,41 +84,41 @@ class User {
    * User.setCurrent.
    * */
   static register(data, callback = f => f) {
-    let modifiedData = {}
-    modifiedData.data = data
-    modifiedData.url = User.URL + '/register'
-    modifiedData.method = 'POST'
-    modifiedData.callback = newCallback
-    modifiedData.responseType = 'json'
+    let modifiedData = {};
+    modifiedData.data = data;
+    modifiedData.url = User.URL + '/register';
+    modifiedData.method = 'POST';
+    modifiedData.callback = newCallback;
+    modifiedData.responseType = 'json';
 
 
     function newCallback(err, response) {
       if (response.success) {
-        User.setCurrent(response.user)
+        User.setCurrent(response.user);
       }
-      callback(err, response)
+      callback(err, response);
     }
-    return createRequest(modifiedData)
+    return createRequest(modifiedData);
   }
   /**
    * Производит выход из приложения. После успешного
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
   static logout(data, callback = f => f) {
-    let modifiedData = {}
-    modifiedData.data = data
-    modifiedData.url = User.URL + '/logout'
-    modifiedData.method = 'POST'
-    modifiedData.callback = newCallback
-    modifiedData.responseType = 'json'
+    let modifiedData = {};
+    modifiedData.data = data;
+    modifiedData.url = User.URL + '/logout';
+    modifiedData.method = 'POST';
+    modifiedData.callback = newCallback;
+    modifiedData.responseType = 'json';
 
     function newCallback(err, response) {
       if (response.success) {
-        User.unsetCurrent()
+        User.unsetCurrent();
       }
-      callback(err, response)
+      callback(err, response);
     }
-    return createRequest(modifiedData)
+    return createRequest(modifiedData);
   }
 }
 

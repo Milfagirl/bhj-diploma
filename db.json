@@ -26,7 +26,28 @@
       "email": "vladimir@mail.ru",
       "password": "123",
       "id": "pvn1p724kbdnuct6",
-      "isAuthorized": true
+      "isAuthorized": false
+    },
+    {
+      "name": "Danil",
+      "email": "danil@mail.ru",
+      "password": "123",
+      "id": "pvn1p7vskbgcue6e",
+      "isAuthorized": false
+    },
+    {
+      "name": "Igor",
+      "email": "igor@mail.ru",
+      "password": "123",
+      "id": "pvn1p43ckbgeqkpn",
+      "isAuthorized": false
+    },
+    {
+      "name": "Путин Владимир",
+      "email": "putyash@mail.ru",
+      "password": "123",
+      "id": "pvn1pbagkbgg1isv",
+      "isAuthorized": false
     }
   ],
   "accounts": [
@@ -39,11 +60,6 @@
       "name": "ВТБ",
       "user_id": "pvn1p7uokbawr1jd",
       "id": "pvn1p71gkbawrek5"
-    },
-    {
-      "name": "ЗП",
-      "user_id": "pvn1p7uokbawr1jd",
-      "id": "pvn1p6k8kbb26ko6"
     },
     {
       "name": "Наличные",
@@ -59,6 +75,36 @@
       "name": "Банк",
       "user_id": "1",
       "id": "pvn1p8aokbdndh32"
+    },
+    {
+      "name": "Тинькофф",
+      "user_id": "pvn1p7vskbgcue6e",
+      "id": "pvn1p97skbgcunps"
+    },
+    {
+      "name": "Наличные",
+      "user_id": "pvn1p7vskbgcue6e",
+      "id": "pvn1p6sckbgcuukx"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "pvn1p7vskbgcue6e",
+      "id": "pvn1p57wkbgeopqw"
+    },
+    {
+      "name": "От мамы",
+      "user_id": "pvn1p43ckbgeqkpn",
+      "id": "pvn1p6cskbgeqt6q"
+    },
+    {
+      "name": "От папы",
+      "user_id": "pvn1p43ckbgeqkpn",
+      "id": "pvn1p7bkkbger0o0"
+    },
+    {
+      "name": "Офшор",
+      "user_id": "pvn1pbagkbgg1isv",
+      "id": "pvn1p9q0kbgg1n5x"
     }
   ],
   "transactions": [
@@ -122,12 +168,60 @@
       "created_at": "2020-06-13T13:10:25.521Z"
     },
     {
-      "id": "pvn1p9lskbdnqyjq",
-      "type": "EXPENSE",
-      "name": "Продукты",
+      "id": "pvn1p8jokbgdbvx2",
+      "type": "INCOME",
+      "name": "ЗП",
       "sum": 3000,
-      "account_id": "pvn1p5eckbb3h6e8",
-      "created_at": "2020-06-13T13:10:36.901Z"
+      "account_id": "pvn1p97skbgcunps",
+      "created_at": "2020-06-15T10:42:16.021Z"
+    },
+    {
+      "id": "pvn1padckbgdkiyp",
+      "type": "EXPENSE",
+      "name": "Чипсы",
+      "sum": 79,
+      "account_id": "pvn1p97skbgcunps",
+      "created_at": "2020-06-15T10:48:59.136Z"
+    },
+    {
+      "id": "pvn1pb4gkbgep10j",
+      "type": "INCOME",
+      "name": "подарок",
+      "sum": 1000,
+      "account_id": "pvn1p97skbgcunps",
+      "created_at": "2020-06-15T11:20:28.770Z"
+    },
+    {
+      "id": "pvn1p5t0kbgepcn3",
+      "type": "INCOME",
+      "name": "дивиденды",
+      "sum": 500,
+      "account_id": "pvn1p57wkbgeopqw",
+      "created_at": "2020-06-15T11:20:43.838Z"
+    },
+    {
+      "id": "pvn1p10skbgepsbx",
+      "type": "EXPENSE",
+      "name": "Аптека",
+      "sum": 200,
+      "account_id": "pvn1p57wkbgeopqw",
+      "created_at": "2020-06-15T11:21:04.172Z"
+    },
+    {
+      "id": "pvn1pbcskbgew19l",
+      "type": "INCOME",
+      "name": "ЗП",
+      "sum": 50000,
+      "account_id": "pvn1p7pskbawr7or",
+      "created_at": "2020-06-15T11:25:55.688Z"
+    },
+    {
+      "id": "pvn1p9t0kbgewfmh",
+      "type": "EXPENSE",
+      "name": "Салон красоты",
+      "sum": 4500,
+      "account_id": "pvn1p7pskbawr7or",
+      "created_at": "2020-06-15T11:26:14.296Z"
     }
   ]
 }

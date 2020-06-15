@@ -3,7 +3,7 @@
  * Имеет свойство URL, равно пустой строке.
  * */
 class Entity {
-  static URL = ''
+  static URL = '';
 
   /**
    * Запрашивает с сервера список данных.
@@ -18,20 +18,9 @@ class Entity {
       callback: callback,
       responseType: 'json',
       data: data
-
-
     }
-    // modifiedData.url =  this.URL
-    // let id = data.id
-    // console.log(modifiedData)
-
-    // modifiedData.data.id  = id
-    // // modifiedData.data.user_id = data.id
-    // modifiedData.method ='GET'
-    // modifiedData.callback = callback
-    // modifiedData.responseType = 'json'
-    // delete modifiedData.data.id
-    createRequest(modifiedData)
+    
+    createRequest(modifiedData);
   }
 
 
@@ -47,13 +36,10 @@ class Entity {
       callback: callback,
       responseType: 'json',
       data: data,
-
     }
 
-
-    modifiedData.data._method = 'PUT'
-
-    createRequest(modifiedData)
+    modifiedData.data._method = 'PUT';
+    createRequest(modifiedData);
   }
 
   /**
@@ -61,34 +47,16 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static get(id, data, callback = f => f) {  //static get(id = '', data, callback = f => f)
-    let newData = { [id]: data }
-
-    console.log(newData)
+   
     let modifiedData = {
       url: this.URL,
       method: 'GET',
       callback: callback,
       responseType: 'json',
-      data: newData
-
-
+      id : id
     }
 
-
-
-
-    createRequest(modifiedData)
-
-
-    //   let modifiedData = {}
-    //   modifiedData.method = 'GET'
-    //   modifiedData.url = `${this.URL}/${id}`
-    //   // console.log(id)
-    //   // modifiedData.data.id = data.id
-    //   // modifiedData.id = id   //или data.id ?
-    //   modifiedData.responseType = 'json'
-    //   modifiedData.callback = callback
-    //   createRequest(modifiedData)
+    createRequest(modifiedData);
   }
 
   /**
@@ -97,8 +65,8 @@ class Entity {
    * */
   static remove(id, data, callback = f => f) { //static remove(id = '', data, callback = f => f)
 
-    let newData = {[id]: data}
-    newData._method = 'DELETE'
+    let newData = {[id]: data};
+    newData._method = 'DELETE';
 
       let modifiedData = {
       data: newData,
@@ -107,6 +75,6 @@ class Entity {
       responseType: 'json',
       callback: callback
     }
-    createRequest(modifiedData)
+    createRequest(modifiedData);
   }
 }

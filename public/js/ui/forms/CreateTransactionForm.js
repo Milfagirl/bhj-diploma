@@ -10,20 +10,22 @@ class CreateTransactionForm extends AsyncForm {
    * */
 
   constructor(element) {
-    super(element)
+    super(element);
     this.renderAccountsList();
   }
   /**   * Получает список счетов с помощью Account.list
    * Обновляет в форме всплывающего окна выпадающий список
    * */
   renderAccountsList() {
-    let user = User.current()
+    let user = User.current();
     if (user) {
-      let selectForm = this.element.querySelector('select[name=account_id]')
+      let selectForm = this.element.querySelector('select[name=account_id]');
+      while (selectForm.firstChild) {
+        selectForm.removeChild(selectForm.firstChild); //очищает список
+      }
       Account.list('', (err, response) => {
+        this.element.reset();
         if (response && response.success) {
-          // let selectForm = this.element.querySelector('select[name=account_id]')
-
           for (let i = 0; i < response.data.length; i++) {
             selectForm.options[i] = new Option(`${response.data[i].name}`, `${response.data[i].id}`);
           }
@@ -42,14 +44,18 @@ class CreateTransactionForm extends AsyncForm {
    * */
   onSubmit(options) {
     Transaction.create(options.data, (err, response) => {
-      App.getModal("newIncome").close();
-      App.getModal("newExpense").close();
       if (response.success) {
-        // App.getModal("newIncome").close();
-        // App.getModal("newExpense").close();
-        App.update()
+        App.update();
+        if (options.data.type == 'income') {
+          App.getModal("newIncome").close();
+        }
+        if (options.data.type == 'expense') {
+          App.getModal("newExpense").close();
+        }
+        this.element.reset();
       }
     })
   }
 }
+
 

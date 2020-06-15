@@ -38,7 +38,7 @@ class Modal {
   registerEvents() {
     this.element.addEventListener('click', (event) => {
       if (event.target.closest('button[data-dismiss = modal]')) {  //кнопка с атрибут data-dismiss = modal
-        this.onClose()
+        this.onClose();
       }
     })
   }
@@ -48,7 +48,7 @@ class Modal {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose() {
-    this.close()
+    this.close();
   }
 
   /**
@@ -57,7 +57,7 @@ class Modal {
   unregisterEvents() {
     this.element.removeEventListener('click', (event) => {
       if (event.target.closest('button[data-dismiss = modal]')) {  //кнопка с атрибут data-dismiss = modal
-        this.onClose()
+        this.onClose();
       }
     })
   }
@@ -66,14 +66,13 @@ class Modal {
    * со значением «block»
    * */
   open() {
-    this.element.style.display = 'block'
+    this.element.style.display = 'block';
 
   }
   /**
    * Закрывает окно: удаляет CSS-свойство display
    * */
   close() {
-    this.element.style.display = 'none'
-
+    this.element.style.display = 'none';
   }
 }

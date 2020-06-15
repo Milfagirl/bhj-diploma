@@ -18,13 +18,12 @@ class Sidebar {
    * при нажатии на кнопку .sidebar-toggle
    * */
   static initToggleButton() {
-    const sidebarClick = document.querySelector('.sidebar-toggle')
-    const bodyForSideBar = document.querySelector('.sidebar-mini')
+    const sidebarClick = document.querySelector('.sidebar-toggle');
+    const bodyForSideBar = document.querySelector('.sidebar-mini');
     sidebarClick.addEventListener('click', (event) => {
-      event.preventDefault()
-      bodyForSideBar.classList.toggle('sidebar-open')
-      bodyForSideBar.classList.toggle('sidebar-collapse')
-
+      event.preventDefault();
+      bodyForSideBar.classList.toggle('sidebar-open');
+      bodyForSideBar.classList.toggle('sidebar-collapse');
     })
 
   }
@@ -51,23 +50,23 @@ class Sidebar {
   // (response.success = true),
   // нужно вызвать App.setState( 'init' )
   static initAuthLinks() {
-    let newRegistr = App.getModal('register') //нашли окно #modal-register
-    let newLogin = App.getModal('login') //нашли окно #modal-login 
+    let newRegistr = App.getModal('register'); //нашли окно #modal-register
+    let newLogin = App.getModal('login'); //нашли окно #modal-login 
 
     document.querySelector('.menu-item_login').addEventListener('click', (event) => {
-      event.preventDefault()
-      newLogin.open()
+      event.preventDefault();
+      newLogin.open();
     })
     document.querySelector('.menu-item_register').addEventListener('click', (event) => {
-      event.preventDefault()
-      newRegistr.open()
+      event.preventDefault();
+      newRegistr.open();
 
     })
     document.querySelector('.menu-item_logout').addEventListener('click', (event) => {
-      event.preventDefault()
+      event.preventDefault();
       User.logout(JSON.parse(localStorage.user), (err,response) => {
         if (response.success) {
-          App.setState('init')
+          App.setState('init');
         }
       })
      

@@ -14,8 +14,8 @@ class TransactionsWidget {
     if (!element) {
       throw new Error(' element is empty')
     }
-    this.element = element
-    this.registerEvents()
+    this.element = element;
+    this.registerEvents();
   }
   /**
    * Регистрирует обработчики нажатия на
@@ -25,13 +25,13 @@ class TransactionsWidget {
    * */
   registerEvents() {
     this.element.addEventListener('click', (event) => {
-      event.preventDefault()
+      event.preventDefault();
       if (event.target == document.querySelector('.btn-success')) {
-        App.getModal('newIncome').open()
+        App.getModal('newIncome').open();
       }
   
       if (event.target == document.querySelector('.btn-danger')) {
-        App.getModal('newExpense').open()
+        App.getModal('newExpense').open();
       }
     })
   }

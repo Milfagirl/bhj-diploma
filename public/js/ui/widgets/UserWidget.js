@@ -26,9 +26,9 @@ class UserWidget {
    * авторизованного пользователя
    * */
   update() {
-    if (User.current()) {
-      let user = JSON.parse(localStorage.user)
-      document.querySelector('.user-name').innerHTML = user.name
+    let user = User.current();
+    if (user) {
+      document.querySelector('.user-name').innerHTML = user.name;
     }
   }
 }
